@@ -3,6 +3,11 @@ import { LoginForm } from './login-form'
 // import { LoginFormWrapper } from './login-form-wrapper-v1'
 import { LoginFormWrapper } from './login-form-wrapper-v2'
 
+/**
+ * Renders the home page with a centered card containing the login form.
+ *
+ * The layout vertically centers the login form within the viewport using a card-based UI.
+ */
 export default function Home() {
   return (
     <div className="flex min-h-[100vh] flex-col justify-center">

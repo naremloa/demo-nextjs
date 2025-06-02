@@ -6,6 +6,13 @@ import { cn } from '@shadcn/lib/utils'
 
 import * as React from 'react'
 
+/**
+ * Renders a styled label component based on Radix UI's Label primitive.
+ *
+ * Combines default label styles with any additional classes provided via {@link className}, and passes all other props to the underlying primitive.
+ *
+ * @returns A React element representing a styled label.
+ */
 function Label({
   className,
   ...props

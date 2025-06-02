@@ -27,7 +27,16 @@ type FormWrapperProps<
 >>
 
 type ExtractFieldValuesFromResolver<TResolver extends Resolver> = TResolver extends Resolver<infer Input> ? Input : never
-// type ExtractTransformedValuesFromResolver<TResolver extends Resolver> = TResolver extends Resolver<any, any, infer Output> ? Output : never
+/**
+ * Provides a strongly typed form context and renders a form using `react-hook-form` with schema validation and UI integration.
+ *
+ * Wraps children with a form context provider and a native HTML form element, handling form state and validation via the supplied resolver. Optionally invokes a typed `onSubmit` callback with validated form data.
+ *
+ * @param children - React nodes to render inside the form.
+ * @param resolver - Validation resolver, typically from Zod or Yup.
+ * @param defaultValues - Initial values for the form fields.
+ * @param onSubmit - Optional callback invoked with validated form data on successful submission.
+ */
 
 export function FormWrapper<
   TFieldValues extends FieldValues = FieldValues,
@@ -53,6 +62,13 @@ export function FormWrapper<
   )
 }
 
+/**
+ * Renders a controlled form field within a form context, including label, input control, and validation message.
+ *
+ * @param label - Optional label to display above the form field.
+ * @param name - The field name or path within the form values.
+ * @param controlRender - A render function that receives field props, field state, and form state, and returns the input element.
+ */
 export function FormFieldWrapper<
   TResolver extends Resolver<any>,
   TFieldValues extends FieldValues = ExtractFieldValuesFromResolver<TResolver>,

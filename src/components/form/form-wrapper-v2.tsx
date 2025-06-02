@@ -23,6 +23,14 @@ type FormWrapperProps<
   }
 >
 
+/**
+ * Renders a form using react-hook-form and provides the form control object to its children via a render prop.
+ *
+ * Wraps the form in a UI container and wires the optional `onSubmit` handler through react-hook-form's `handleSubmit` if provided.
+ *
+ * @param children - A render function that receives the form control object and returns form elements.
+ * @param onSubmit - Optional callback invoked with validated form data on submission.
+ */
 export function FormWrapper<
   TFieldValues extends FieldValues = FieldValues,
   TContext = any,
@@ -41,6 +49,16 @@ export function FormWrapper<
   )
 }
 
+/**
+ * Renders a form field with label, custom input, and validation message using react-hook-form context.
+ *
+ * @param control - The form control object for managing field state.
+ * @param label - Optional label to display above the field.
+ * @param name - The name of the field within the form.
+ * @param controlRender - A render function that receives field props and returns the input element.
+ *
+ * @returns A form field component with integrated label, input, and validation message.
+ */
 export function FormFieldWrapper<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,

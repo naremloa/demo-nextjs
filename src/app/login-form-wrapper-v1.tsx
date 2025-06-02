@@ -14,6 +14,11 @@ const formSchema = z.object({
   password: z.string(),
 })
 
+/**
+ * Renders a login form with username and password fields, using Zod schema validation and react-hook-form integration.
+ *
+ * The form enforces a minimum length for the username and requires both fields. On submission, the entered data is logged to the console.
+ */
 export function LoginFormWrapper() {
   const resolver = zodResolver(formSchema)
 
