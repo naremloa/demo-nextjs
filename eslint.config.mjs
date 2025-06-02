@@ -5,13 +5,21 @@ const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 })
 
-export default antfu({
-  typescript: true,
-  react: true,
-  jsx: true,
-  jsonc: true,
-}, ...compat.config({
-  extends: [
-    'plugin:@next/next/recommended',
-  ],
-}))
+export default antfu(
+  {
+    typescript: true,
+    react: true,
+    jsx: true,
+    jsonc: true,
+  },
+  ...compat.config({
+    extends: [
+      'plugin:@next/next/recommended',
+    ],
+  }),
+  {
+    rules: {
+      'no-console': 'warn',
+    },
+  },
+)
