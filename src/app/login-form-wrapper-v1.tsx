@@ -43,7 +43,7 @@ export function LoginFormWrapper() {
         name="password"
         label="Password"
         controlRender={({ field }) => (
-          <Input {...field} />
+          <Input type="password" {...field} />
         )}
       >
       </FormFieldWrapper>
